@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiko:wght@400;700&family=Exo+2:wght@700;900&family=Satisfy&display=swap');
+
+body{
+    margin:0;
+    padding: 0;
+    cursor: none;
+}
+
+main{
+    background: #121212;
+    color: white;
+    width: 100%;
+    overflow-y: auto;
+}
+
+/* --------------- Cursor ----------------*/
+
+#cursor{
+    position: absolute;
+    width: 20px;
+    border-radius: 50%;
+    pointer-events: none;
+    aspect-ratio: 1;
+    background: #242424;
+    box-sizing: border-box;
+    border: 1px solid white;
+    transition: 0.1s;
+    transform: translate(-50%,-50%);
+    z-index: 5;
+    display: none;
+}
+
+nav ul li:hover ~ #cursor{
+    background: transparent;
+    width: 60px;
+} 
+/* --------------- Navbar ----------------*/
+
+nav{
+    height: 10vh;
+    font-family: 'Amiko', sans-serif;
+    font-weight: 400;
+    font-size: 1.05rem;
+}
+
+nav ul{
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+}
+
+nav ul li{
+    margin-top: 2.5rem;
+    margin-right: 7.5rem;
+}
+
+nav ul li:hover{
+    cursor: pointer;
+    border-bottom: 1px solid white;
+}
+
+/* ---------- Presentation ---------------*/
+
+.presentation{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5vw;
+    height: 90vh;
+    font-family: 'Exo 2', sans-serif;
+}
+
+.presentation_text{
+    position: absolute;
+    left:15vw;
+    width: 30vw;
+}
+
+#presentation_img{
+    position: absolute;
+    right:17.5vw;
+    height:50vh;
+    top: 30vh;
+    bottom: 0vh;
+    border-radius: 50%;
+}
+
+.presentation h1{
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin-bottom: 0;
+}
+
+.presentation h2{
+    margin-top: 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.presentation p{
+    font-size: 1.2rem;
+    margin-top: 0;
+}
+
+/* ---------------------------------------*/
+
+.websites_container{
+    height: 50vh;
+    background:#161616;
+}
