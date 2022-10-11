@@ -9,17 +9,25 @@
 </head>
 <body>
     <main id="main">
-        <nav>
-            <ul>
-                <li>ABOUT</li>
-                <li>PORTFOLIO</li>
-                <li>CONTACT</li>
-                <label class="switch">
-                    <input type="checkbox" id="dark_switch">
-                    <span class="slider">
-                        <span class="circle"></span>
-                    </span>
+        <nav class="navbar">
+            <input type="checkbox" id="hamburger_checkbox">
+                <label for="hamburger_checkbox" class="hamburger_button">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </label>
+            <ul>
+                <li class="nav_toggle"><a href="">ABOUT</a></li>
+                <li class="nav_toggle"><a href="">PORTFOLIO</a></li>
+                <li class="nav_toggle"><a href="">CONTACT</a></li>
+                <li class="nav_toggle">
+                    <label class="switch">
+                        <input type="checkbox" id="dark_switch">
+                        <span class="slider">
+                            <span class="circle"></span>
+                        </span>
+                    </label>
+                </li>
                 <div id="cursor"></div>
             </ul>
         </nav>
@@ -27,14 +35,12 @@
             <div class="presentation_text">
                 <h1>Federico Garcia</h1>
                 <h2>Web Designer</h2>
-                <p>
-                    Welcome to my personal website. Here you can get to know me a little better and find some projects that I worked on.
-                </p>
+                <p>Welcome to my personal website.</p><p>Here you can get to know me better and find some projects that I worked on.</p>
             </div>
             <img src="Imagenes/Foto.png" id="presentation_img" alt="">
         </div>
-        <div class="websites_container">
-            <div class="element">
+        <div class="introduction">
+            <!-- <div class="element">
                 <div class="website" id="web1">
                     <img src="" alt="">
                 </div>
@@ -44,9 +50,13 @@
                 <div class="website" id="web3">
                     <img src="" alt="">
                 </div>
-            </div>
+            </div> -->
         </div>
+        <div class="website_container"></div>
     </main>
+    <footer>
+        
+    </footer>
     <script src="./script.js"></script>
 </body>
 </html>

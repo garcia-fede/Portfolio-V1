@@ -16,7 +16,6 @@ main{
     background: var(--background);
     color: var(--text_and_details);
     width: 100%;
-    overflow-y: auto;
     transition: 0.5s;
 }
 
@@ -37,65 +36,73 @@ main{
     display: none;
 }
 
-nav ul li:hover ~ #cursor{
+.navbar ul li:hover ~ #cursor{
     background: transparent;
     border: 1px solid var(--text_and_details);
     width: 60px;
 } 
 
-label:hover ~ #cursor{
+.navbar #hamburger_checkbox:hover ~ ul #cursor{
+    opacity: 0;
+} 
+
+/* label:hover ~ #cursor{
     opacity: 0;
     transition: 0.2s;
-} 
+}  */
 /* --------------- Navbar ----------------*/
 
-nav{
+.navbar{
     height: 10vh;
     font-family: 'Amiko', sans-serif;
     font-weight: 400;
     font-size: 1.05rem;
 }
 
-nav ul{
-    margin: 0;
+.navbar ul{
+    min-height: 10vh;
+    margin:0;
+    padding: 0;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     list-style: none;
     margin-right: 5rem;
 }
 
-nav ul li{
-    margin-top: 2.5rem;
+.navbar ul li{
     margin-right: 7.5rem;
 }
 
-nav ul li:hover{
-    cursor: pointer;
-    border-bottom: 1px solid var(--background);
+.navbar ul li a{
+    text-decoration: none;
+    color: var(--text_and_details);
 }
 
 /*---------- Imported Switch -------------*/
-
 .switch {
-top: 2.75rem;
 font-size: 17px;
 position: relative;
 display: inline-block;
-width: 2.5em;
-height: .5em;
+width: 3.5em;
+height: 0.5em;
+top: 5px;
+left: -15%;
 }
 
+/* Hide default HTML checkbox */
 .switch input {
 opacity: 0;
 width: 0;
 height: 0;
 }
 
+/* The slider */
 .slider {
 position: absolute;
 cursor: pointer;
 top: 0;
-left: 0;
+left: 25px;
 right: 0;
 bottom: 0;
 background-color: #5B5B5B;
@@ -107,6 +114,7 @@ align-items: center;
 
 .slider .circle {
 background-color: #212121;
+border-radius: 50%;
 position: absolute;
 left: 0;
 transform: translateX(-50%);
@@ -129,8 +137,8 @@ transition: .4s;
 .slider .circle::after {
 content: '';
 background-color: #212121;
-height: 1.5em;
-width: 1.5em;
+height: 1.3em;
+width: 1.3em;
 border-radius: 50%;
 position: absolute;
 top: 50%;
@@ -155,6 +163,66 @@ height: 0;
 transition: .4s;
 }
 
+/* ---------- Hamburger Button ---------------*/
+
+#hamburger_checkbox{
+    display: none;
+}
+
+.hamburger_button{
+    transition: 1s;
+    position: fixed;
+    top: 25px;
+    right: 50%;
+    left:50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 35px;
+    display: none;
+    padding: 5px;
+    border: 1px solid var(--text_and_details);
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.hamburger_button span{
+    display: block;
+    margin: 5px auto;
+    width: 27.5px;
+    height: 5px;
+    background: var(--text_and_details);
+    border-radius: 100px;
+    transition: 1s;
+}
+
+#hamburger_checkbox:checked ~ .hamburger_button span:nth-child(1){
+    position: absolute;
+    right: 30%;
+    left: 30%;
+    width: 30px;
+    transform: rotate(45deg);
+    transform-origin: top left;
+}
+#hamburger_checkbox:checked ~ .hamburger_button span:nth-child(2){
+    position: absolute;
+    opacity: 0;
+    top: 40%;
+    bottom: 40%;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%,-50%);
+    
+}
+#hamburger_checkbox:checked ~ .hamburger_button span:nth-child(3){
+    position: absolute;
+    width: 30px;
+    top: 25px;
+    right: 30%;
+    left: 30%;
+    transform: rotate(-45deg);
+    transform-origin: bottom left;
+}
+
 /* ---------- Presentation ---------------*/
 
 .presentation{
@@ -164,6 +232,7 @@ transition: .4s;
     padding: 0 5vw;
     height: 90vh;
     font-family: 'Exo 2', sans-serif;
+    margin-bottom: 0;
 }
 
 .presentation_text{
@@ -197,11 +266,97 @@ transition: .4s;
 .presentation p{
     font-size: 1.2rem;
     margin-top: 0;
+    margin-bottom: 0;
 }
 
 /* ---------------------------------------*/
 
-.websites_container{
-    height: 50vh;
+.introduction{
+    margin-top: 0;
+    font-family: 'Exo 2', sans-serif;
+    height: 80vh;
     background:var(--section_background);
+}
+
+.introduction h1{
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-bottom: 0;
+}
+
+.website_container{
+    height: 50vh;
+    background: var(--background);
+}
+
+/*--------------- Footer -----------------*/
+
+footer{
+    height: 30vh;
+    width: 100%;
+    bottom: 0;
+    background:var(--background);
+}
+
+/* ---------------------------------------*/
+
+@media (max-width: 1420px) {
+.navbar ul{
+    margin-right: 0;
+    justify-content: center;
+}
+.navbar ul li{
+    margin: 0 5rem;
+}
+.presentation {
+flex-direction: column;
+}
+.presentation_text{
+    position: static;
+    width: 60vw;
+    margin-bottom: 2rem;
+}
+.presentation h1,h2,p {
+    text-align: center;
+}
+
+#presentation_img{
+    position: static;
+    height: 30vh;
+}
+}
+
+@media (max-width: 850px) {
+    .navbar ul{
+        transition: 0.5s;
+        width: 100%;
+        min-height: 100px;
+        background: var(--section_background);
+        position: fixed;
+        flex-direction: column;
+    }
+    .navbar ul li{
+        margin-right: 0;
+    }
+    .nav_toggle{
+        display: none;
+    }
+    .hamburger_button{
+        display: block;
+        z-index: 5;
+    }
+    #hamburger_checkbox:checked ~ ul .nav_toggle{
+        margin: 1rem 0;
+        display: initial;
+    }
+    #hamburger_checkbox:checked ~ ul{
+        padding-top: 80px;
+    }
+
+}
+
+@media (max-width: 700px) {
+    .presentation_text{
+        width: 80vw;
+    }
 }
