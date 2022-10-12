@@ -9,7 +9,7 @@
 body{
     margin:0;
     padding: 0;
-    cursor: none;
+    /* cursor: none; */
 }
 
 main{
@@ -27,16 +27,16 @@ main{
     border-radius: 50%;
     pointer-events: none;
     aspect-ratio: 1;
-    background: var(--text_and_details);
+    background: transparent;
     box-sizing: border-box;
-    border: 1px solid var(--background);
+    border: none;
     transition: 0.1s;
     transform: translate(-50%,-50%);
     z-index: 5;
     display: none;
 }
 
-.navbar ul li:hover ~ #cursor{
+.navbar ul li:hover:not(:nth-child(4)) ~ #cursor{
     background: transparent;
     border: 1px solid var(--text_and_details);
     width: 60px;
@@ -286,6 +286,7 @@ transition: .4s;
 
 .website_container{
     height: 50vh;
+    width: 100%;
     background: var(--background);
 }
 

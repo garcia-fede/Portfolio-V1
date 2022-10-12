@@ -11,12 +11,18 @@ window.addEventListener("scroll",function(e){
 // Cursor Movement
 var cursor = document.getElementById("cursor");
 document.addEventListener("mousemove",(e)=>{
-    cursor.style.display = 'block'
     var x= e.clientX;
     var y= e.clientY;
     cursor.style.left = x + "px";
     cursor.style.top = y + scrolled + "px";
 })
+
+var li = document.getElementsByClassName("nav-item");
+for(var i=0;i<li.length;i++){
+    li[i].addEventListener("mouseover",(e)=>{
+        cursor.style.display='block'
+    });
+}
 
 // Light/Dark Mode
 
