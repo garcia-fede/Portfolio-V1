@@ -4,6 +4,18 @@
     --background: #ffffff;
     --section_background:#e4e4e4;
     --text_and_details: #121212;
+    --orange_contrast: #CC5500;
+}
+
+*{
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body{
@@ -269,25 +281,96 @@ transition: .4s;
     margin-bottom: 0;
 }
 
+.presentation button{
+    margin-top: 25px;
+    background: var(--text_and_details);
+    color: var(--background);
+    border: none;
+    border-radius: 15px;
+    padding: 10px 25px;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 7.5px;
+}
+
+.presentation button:hover{
+    background: var(--orange_contrast);
+    cursor: pointer;
+}
+
 /* ---------------------------------------*/
+
+/* ------------Introduccion --------------*/
 
 .introduction{
     margin-top: 0;
     font-family: 'Exo 2', sans-serif;
-    height: 80vh;
-    background:var(--section_background);
+    height: 100vh;
+    /* background:var(--section_background); */
+    background-image: url(/Imagenes/cool-background.png);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
 }
 
-.introduction h1{
-    font-size: 2.5rem;
-    font-weight: 900;
-    margin-bottom: 0;
+.stack-row{
+    position: relative;
+    height: 30%;
+    margin: 12.5px 0;
+    padding: 0 10%;
+    display: flex;
+    gap: 50px;
+    align-items: center;
 }
+
+.stack-row img{
+    height: 60%;
+    filter: drop-shadow(2px 2px 2px #585858);
+    transition: 1s ease;
+}
+
+.stack-row img:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+.toRight{
+    /* background: red; */
+    transform: translateX(11.8%);
+}
+
+.toLeft{
+    /* background: green; */
+    transform: translateX(-11.8%);
+}
+
+/* ---------------------------------------*/
+
 
 .website_container{
+    position: relative;
     height: 50vh;
     width: 100%;
     background: var(--background);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    transition: 1s;
+}
+
+.website_container:has(.website:hover) .website:not(:hover){
+    scale:0.9;
+    opacity: 0.8;
+}
+
+.website{
+    transition: 2s;
+    height: 80%;
+    width: 27.5%;
+    background:gold;
 }
 
 /*--------------- Footer -----------------*/
@@ -335,16 +418,18 @@ flex-direction: column;
         background: var(--section_background);
         position: fixed;
         flex-direction: column;
+        z-index: 97;
     }
     .navbar ul li{
         margin-right: 0;
+        z-index: 98;
     }
     .nav_toggle{
         display: none;
     }
     .hamburger_button{
         display: block;
-        z-index: 5;
+        z-index: 99;
     }
     #hamburger_checkbox:checked ~ ul .nav_toggle{
         margin: 1rem 0;

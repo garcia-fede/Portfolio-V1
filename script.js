@@ -3,11 +3,6 @@ var main = document.getElementById("main");
 // Scroll Value
 var scrolled=0.01;
 
-window.addEventListener("scroll",function(e){
-    scrolled = window.pageYOffset || document.documentElement.scrollTop;
-    console.log(scrolled)
-})
-
 // Cursor Movement
 var cursor = document.getElementById("cursor");
 document.addEventListener("mousemove",(e)=>{
@@ -17,12 +12,40 @@ document.addEventListener("mousemove",(e)=>{
     cursor.style.top = y + scrolled + "px";
 })
 
-var li = document.getElementsByClassName("nav-item");
-for(var i=0;i<li.length;i++){
-    li[i].addEventListener("mouseover",(e)=>{
+var nav_items = document.querySelectorAll(".nav-item");
+nav_items.forEach((item)=>{
+    item.addEventListener("mouseover",(e)=>{
         cursor.style.display='block'
-    });
-}
+    })
+    item.addEventListener("click",(e)=>{
+        nav_items.forEach(i=>{
+            if(i!=item){
+                i.style.color= "var(--text_and_details)";
+                i.style.paddingBottom='0px';
+                i.style.borderBottom='0px';
+            }
+            else{
+                i.style.color='var(--orange_contrast)';
+                i.style.textShadow= "rgba(0, 0, 0, 0.5) 0px 0 10px";
+                i.style.borderBottom='1px solid var(--orange_contrast)';
+            }
+        })
+    })
+})
+
+// Parallax Tech Stack
+
+window.addEventListener("scroll", function() {
+    var scrollTop = window.pageYOffset;
+    var rowToRight = document.querySelectorAll(".toRight");
+    var rowToLeft = document.querySelector(".toLeft");
+    rowToRight.forEach(row=>{
+        row.style.left = -scrollTop/4.5 + "px";
+        row.style.top = +scrollTop/100 + "px";
+    })
+    rowToLeft.style.right = -scrollTop/4.5 + "px";
+    row.style.top = +scrollTop/100 + "px";
+});
 
 // Light/Dark Mode
 
