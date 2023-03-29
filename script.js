@@ -1,4 +1,12 @@
-var main = document.getElementById("main");
+
+window.onload= function() {
+    Particles.init({
+        selector: '.background-particles',
+        color: ['#DA0463', '#CC5500'],
+        connectParticles: true,
+        maxParticles:40
+    });
+};
 
 // Scroll Value
 var scrolled=0.01;
@@ -54,9 +62,8 @@ var dark_switch = document.getElementById("dark_switch");
 var toggleLight=true; // 1 = Light
 dark_switch.addEventListener("change",()=>{
     toggleLight=!toggleLight;
-    console.log(toggleLight)
     if(!toggleLight){
-        root.style.setProperty('--background', "#121212");
+        root.style.setProperty('--background', "#1c1d21");
         root.style.setProperty('--text_and_details', "#ffffff");
         root.style.setProperty('--section_background', "#161616");
     }
