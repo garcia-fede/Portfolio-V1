@@ -2,18 +2,22 @@
 
 :root{
     --background: #ffffff;
+    --opposite_background: #1c1d21;
     --section_background:#faf8f8;
     --text_and_details: #121212;
     --orange_contrast: #CC5500;
 }
 
 *{
+    scroll-behavior: smooth;
+}
+
+img,li,a{
     -webkit-user-drag: none;
     user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
-    scroll-behavior: smooth;
 }
 
 body{
@@ -164,7 +168,7 @@ input:checked + .slider:before {
     left: 0;  
     z-index: 1;
     pointer-events: none;
-    
+
     }
 
 /* ---------- Hamburger Button ---------------*/
@@ -276,7 +280,6 @@ input:checked + .slider:before {
 }
 
 .presentation button{
-    margin-top: 25px;
     background: var(--text_and_details);
     color: var(--background);
     border: none;
@@ -289,20 +292,58 @@ input:checked + .slider:before {
     gap: 7.5px;
 }
 
+.presentation .buttons{
+    display: flex;
+    gap: 35px;
+    margin-top: 25px;
+}
+
 .presentation button:hover{
     background: var(--orange_contrast);
     cursor: pointer;
 }
 
-/* ---------------------------------------*/
-
-/* ------------Introduccion --------------*/
+/* -------------- Introduction ---------------*/
 
 .introduction{
+    height: 80vh;
+    padding: 10vh 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--opposite_background);
+    font-family: 'Exo 2', sans-serif;
+    color: var(--background);
+}
+
+.introduction img{
+    top: 0;
+    width: 100px;
+    filter:invert(100%);
+}
+
+.introduction h2{
+    width: 40%;
+    text-align: center;
+    font-size: 28px;
+}
+
+.introduction p{
+    font-size: 20px;
+    width: 60%;
+    text-align: center;
+}
+
+/* ------------Stack Container --------------*/
+
+.stack-container{
     margin-top: 0;
     font-family: 'Exo 2', sans-serif;
     height: 100vh;
-    background:var(--section_background);
+    background: url(Imagenes/cool-background.png);
+    /* background:var(--section_background); */
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -332,12 +373,14 @@ input:checked + .slider:before {
 }
 .toRight{
     /* background: red; */
-    transform: translateX(11.8%);
+    transform: translateX(22.5%);
+    overflow:hidden;
 }
 
 .toLeft{
     /* background: green; */
-    transform: translateX(-11.8%);
+    transform: translateX(-22.5%);
+    overflow:hidden;
 }
 
 /* --------- Imported Hexagon ------------*/
@@ -410,31 +453,7 @@ input:checked + .slider:before {
     }
 }
 
-/* ---------------------------------------*/
-
-
-.website_container{
-    position: relative;
-    height: 50vh;
-    width: 100%;
-    background: var(--background);
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    transition: 1s;
-}
-
-.website_container:has(.website:hover) .website:not(:hover){
-    scale:0.9;
-    opacity: 0.8;
-}
-
-.website{
-    transition: 2s;
-    height: 80%;
-    width: 27.5%;
-    background:gold;
-}
+/* -----------  Animaciones -----------*/
 
 /*--------------- Footer -----------------*/
 

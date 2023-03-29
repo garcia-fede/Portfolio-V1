@@ -41,6 +41,19 @@ nav_items.forEach((item)=>{
     })
 })
 
+
+// Animation scroll library
+
+const sr = ScrollReveal({
+    origin: 'bottom',
+    distance: '100px',
+    duration: 500,
+    delay: 100,
+    easing: 'ease-out',
+    reset: true
+})
+sr.reveal('.scrollIn');
+
 // Parallax Tech Stack
 
 window.addEventListener("scroll", function() {
@@ -60,17 +73,23 @@ window.addEventListener("scroll", function() {
 let root = document.documentElement; // Getting CSS Variables access
 var dark_switch = document.getElementById("dark_switch");
 var toggleLight=true; // 1 = Light
+let codetag = document.getElementById("code-tag");
 dark_switch.addEventListener("change",()=>{
     toggleLight=!toggleLight;
     if(!toggleLight){
         root.style.setProperty('--background', "#1c1d21");
+        root.style.setProperty('--opposite_background', "#ffffff");
         root.style.setProperty('--text_and_details', "#ffffff");
         root.style.setProperty('--section_background', "#161616");
+        codetag.style.filter = "invert(0%)"
     }
     else if(toggleLight){
         root.style.setProperty('--background', "#ffffff");
+        root.style.setProperty('--opposite_background', "#1c1d21");
         root.style.setProperty('--text_and_details', "#121212");
         root.style.setProperty('--section_background', "#e4e4e4");
+        codetag.style.filter = "invert(100%)"
     }
 })
+
 

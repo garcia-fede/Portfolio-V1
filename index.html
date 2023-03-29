@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects</title>
+    <title>Federico Garcia - Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 <body>
     <main id="main">
@@ -18,7 +19,7 @@
                 <span></span>
             </label>
             <ul>
-                <li class="nav_toggle"><a href="#" class="nav-item">ABOUT</a></li>
+                <li class="nav_toggle"><a href="#introduction" class="nav-item">ABOUT</a></li>
                 <li class="nav_toggle"><a href="#" class="nav-item">PORTFOLIO</a></li>
                 <li class="nav_toggle"><a href="#" class="nav-item">CONTACT</a></li>
                 <li class="nav_toggle">
@@ -35,20 +36,41 @@
                 <h1>Federico Garcia</h1>
                 <h2>Web Designer</h2>
                 <p>Welcome to my personal website.</p><p>Here you can get to know me better and find some projects that I worked on.</p>
-                <button>Learn more 
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-box" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <polyline points="12 3 20 7.5 20 16.5 12 21 4 16.5 4 7.5 12 3" />
-                    <line x1="12" y1="12" x2="20" y2="7.5" />
-                    <line x1="12" y1="12" x2="12" y2="21" />
-                    <line x1="12" y1="12" x2="4" y2="7.5" />
-                    </svg>
-                </button>
+                <div class="buttons">
+                    <button>Learn more 
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-box" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <polyline points="12 3 20 7.5 20 16.5 12 21 4 16.5 4 7.5 12 3" />
+                        <line x1="12" y1="12" x2="20" y2="7.5" />
+                        <line x1="12" y1="12" x2="12" y2="21" />
+                        <line x1="12" y1="12" x2="4" y2="7.5" />
+                        </svg>
+                    </button>
+                    <button id="download-cv">Download CV
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-download" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2" />
+                            <polyline points="7 11 12 16 17 11" />
+                            <line x1="12" y1="4" x2="12" y2="16" />
+                        </svg>
+                    </button>
+                </div>
+                
             </div>
             <div class="logo-container"><img src="Imagenes/Logo - Transparente.png" id="presentation_img" alt="Presentation Image"></div>
             <canvas class="background-particles"></canvas>
         </div>
-        <div class="introduction">
+        <div class="introduction" id="introduction">
+            <img class="scrollIn" id="code-tag" src="Imagenes/tag.png" alt="Code Icon">
+            <h2 class="scrollIn">My name is Federico Garcia, I'm a Full Stack Developer from Argentina </h2>
+            <p class="scrollIn">If there is one thing I love, it's the infinite amount of possibilities that exist among creating and web development
+                it's all about it.
+                In my 3 years of studying I've been through different courses and universities where I learnt about
+                Front End and Back End and I can proudly say I can work with both.
+            </p>
+            <p class="scrollIn">Here you can see some of the technologies and tools that I use:</p>
+        </div>
+        <div class="stack-container">
             <div class="stack-row toRight">
                 <div class="hexagon"><img src="Imagenes/tech stack/HTML5.png" alt="HTML5 Icon"></div>
                 <div class="hexagon"><img src="Imagenes/tech stack/css3.png" alt="CSS Icon"></div>
@@ -74,7 +96,6 @@
                 <div class="hexagon"><img src="Imagenes/tech stack/github.png" alt="Bootstrap Icon"></div>
             </div>
         </div>
-        
     </main>
     <footer>
         
