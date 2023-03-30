@@ -316,6 +316,7 @@ input:checked + .slider:before {
     background: var(--opposite_background);
     font-family: 'Exo 2', sans-serif;
     color: var(--background);
+    z-index: -5;
 }
 
 .introduction img{
@@ -342,23 +343,59 @@ input:checked + .slider:before {
     margin-top: 0;
     font-family: 'Exo 2', sans-serif;
     height: 100vh;
-    background: url(Imagenes/cool-background.png);
-    /* background:var(--section_background); */
     background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content:center;
     align-items: center;
+    position: relative;
+    background: linear-gradient(90deg, rgba(193,249,122,1) 0%, rgba(222,186,112,1) 50%, rgba(128,125,108,1) 100%);
+    box-shadow: 0px -30px 30px -3px rgba(223, 95, 11, 0.1);
+    z-index: 99999;
 }
+
+.stack-container-background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 125%;
+    height: 100vh;
+    animation: rightToLeft 40s linear infinite;
+}
+
+@keyframes rightToLeft{
+    0% {
+        left: 0%;
+    }
+    50% {
+        left: -25%;
+    }
+    100% {
+        left: 0%;
+    }
+}
+
+#cavernParallax{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0.9;
+    /* background-image: url(Imagenes/Caverna.png); */
+}
+
 
 .stack-row{
     position: relative;
-    height: 30%;
+    height: 25%;
     margin: 12.5px 0;
     padding: 0 10%;
     display: flex;
     gap: 120px;
     align-items: center;
+    z-index: 1;
 }
 
 .stack-row img{

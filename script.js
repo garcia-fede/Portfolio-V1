@@ -73,7 +73,8 @@ window.addEventListener("scroll", function() {
 let root = document.documentElement; // Getting CSS Variables access
 var dark_switch = document.getElementById("dark_switch");
 var toggleLight=true; // 1 = Light
-let codetag = document.getElementById("code-tag");
+var codetag = document.getElementById("code-tag");
+var cavern = document.getElementById("cavernParallax");
 dark_switch.addEventListener("change",()=>{
     toggleLight=!toggleLight;
     if(!toggleLight){
@@ -82,6 +83,7 @@ dark_switch.addEventListener("change",()=>{
         root.style.setProperty('--text_and_details', "#ffffff");
         root.style.setProperty('--section_background', "#161616");
         codetag.style.filter = "invert(0%)"
+        cavern.style.filter = "brightness(250%)"
     }
     else if(toggleLight){
         root.style.setProperty('--background', "#ffffff");
@@ -89,7 +91,6 @@ dark_switch.addEventListener("change",()=>{
         root.style.setProperty('--text_and_details', "#121212");
         root.style.setProperty('--section_background', "#e4e4e4");
         codetag.style.filter = "invert(100%)"
+        cavern.style.filter = "brightness(100%)"
     }
 })
-
-
