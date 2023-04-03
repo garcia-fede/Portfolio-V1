@@ -44,7 +44,7 @@ nav_items.forEach((item)=>{
 
 // Animation scroll library
 
-const sr = ScrollReveal({
+const srBottom = ScrollReveal({
     origin: 'bottom',
     distance: '100px',
     duration: 500,
@@ -52,7 +52,17 @@ const sr = ScrollReveal({
     easing: 'ease-out',
     reset: true
 })
-sr.reveal('.scrollIn');
+srBottom.reveal('.scrollIn');
+
+const srFadeIn = ScrollReveal({
+    origin: 'bottom',
+    distance: '10px',
+    opacity: 0.8,
+    duration: 500,
+    delay: 100,
+    easing: 'ease-out',
+})
+srFadeIn.reveal('.fadeIn');
 
 // Parallax Tech Stack
 
@@ -62,10 +72,8 @@ window.addEventListener("scroll", function() {
     var rowToLeft = document.querySelector(".toLeft");
     rowToRight.forEach(row=>{
         row.style.left = -scrollTop/4.5 + "px";
-        row.style.top = +scrollTop/100 + "px";
     })
     rowToLeft.style.right = -scrollTop/4.5 + "px";
-    row.style.top = +scrollTop/100 + "px";
 });
 
 // Light/Dark Mode
@@ -74,7 +82,6 @@ let root = document.documentElement; // Getting CSS Variables access
 var dark_switch = document.getElementById("dark_switch");
 var toggleLight=true; // 1 = Light
 var codetag = document.getElementById("code-tag");
-var cavern = document.getElementById("cavernParallax");
 dark_switch.addEventListener("change",()=>{
     toggleLight=!toggleLight;
     if(!toggleLight){
@@ -83,7 +90,6 @@ dark_switch.addEventListener("change",()=>{
         root.style.setProperty('--text_and_details', "#ffffff");
         root.style.setProperty('--section_background', "#161616");
         codetag.style.filter = "invert(0%)"
-        cavern.style.filter = "brightness(250%)"
     }
     else if(toggleLight){
         root.style.setProperty('--background', "#ffffff");
@@ -91,6 +97,5 @@ dark_switch.addEventListener("change",()=>{
         root.style.setProperty('--text_and_details', "#121212");
         root.style.setProperty('--section_background', "#e4e4e4");
         codetag.style.filter = "invert(100%)"
-        cavern.style.filter = "brightness(100%)"
     }
 })
