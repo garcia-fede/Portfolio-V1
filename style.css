@@ -359,7 +359,7 @@ input:checked + .slider:before {
     top: 0;
     left: 0;
     z-index: 0;
-    width: 125%;
+    width: 115%;
     height: 100vh;
     overflow-x: hidden;
     animation: rightToLeft 30s linear infinite;
@@ -367,13 +367,13 @@ input:checked + .slider:before {
 
 @keyframes rightToLeft{
     0% {
-        transform: translateX(0%);
+        left: 0%;
     }
     50% {
-        transform: translateX(-15%);
+        left: -15%;
     }
     100% {
-        transform: translateX(0%);
+        left: 0%;
     }
 }
 
