@@ -1,10 +1,17 @@
-
 window.onload= function() {
     Particles.init({
         selector: '.background-particles',
         color: ['#DA0463', '#CC5500'],
         connectParticles: true,
-        maxParticles:40
+        maxParticles:40,
+        interactivity: {
+            detect_on: "canvas",
+            events: {
+                onhover: {
+                    enable: false
+                }
+            }
+        }
     });
 };
 
@@ -99,3 +106,4 @@ dark_switch.addEventListener("change",()=>{
         codetag.style.filter = "invert(100%)"
     }
 })
+

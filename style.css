@@ -11,6 +11,9 @@
 *{
     scroll-behavior: smooth;
 }
+canvas{
+    pointer-events: none;
+}
 
 img,li,a{
     -webkit-user-drag: none;
@@ -24,6 +27,8 @@ body{
     margin:0;
     padding: 0;
     overflow-x: hidden;
+    max-width: 100%;
+    touch-action: pan-y;
     /* cursor: none; */
 }
 
@@ -45,7 +50,6 @@ main{
     background: transparent;
     box-sizing: border-box;
     border: none;
-    transition: 0.1s;
     transform: translate(-50%,-50%);
     z-index: 5;
     display: none;
@@ -180,7 +184,7 @@ input:checked + .slider:before {
 .hamburger_button{
     transition: 1s;
     position: fixed;
-    top: 25px;
+    top: 15px;
     right: 50%;
     left:50%;
     transform: translateX(-50%);
@@ -236,50 +240,53 @@ input:checked + .slider:before {
 .presentation{
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 0 5vw;
-    height: 90vh;
+    justify-content: space-around;
+    padding: 0 15% 5vh 15%;
+    height: 85vh;
+    width: 70%;
     font-family: 'Exo 2', sans-serif;
     margin-bottom: 0;
 }
 
 .presentation_text{
-    position: absolute;
-    left:15vw;
-    top: 30%;
-    width: 30vw;
+    width: 60%;
     z-index: 5;
+}
+
+.presentation_text h1{
+    margin-top: 0;
+    padding-top: 0;
+    margin-bottom: 0;
+    font-size: 3.5rem;
+    font-weight: 900;
+}
+
+.logo_container{
+    width: 40%;
+    display: flex;
+    justify-content: flex-end;
 }
 
 #presentation_img{
-    position: absolute;
-    right:17.5vw;
-    height:55vh;
-    top: 25%;
-    bottom: 0vh;
+    height: 400px;
     z-index: 5;
 }
 
-.presentation h1{
-    font-size: 3.5rem;
-    font-weight: 900;
-    margin-bottom: 0;
-}
-
-.presentation h2{
+.presentation_text h2{
     margin-top: 0;
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
 }
 
-.presentation p{
+.presentation_text p{
     font-size: 1.2rem;
     margin-top: 0;
     margin-bottom: 0;
+    width: 80%;
 }
 
-.presentation button{
+.presentation_text button{
     background: var(--text_and_details);
     color: var(--background);
     border: none;
@@ -292,13 +299,17 @@ input:checked + .slider:before {
     gap: 7.5px;
 }
 
-.presentation .buttons{
+.presentation_text .buttons{
     display: flex;
     gap: 35px;
     margin-top: 25px;
 }
 
-.presentation button:hover{
+.presentation_text .buttons a{
+    text-decoration: none;
+}
+
+.presentation_text button:hover{
     background: var(--orange_contrast);
     cursor: pointer;
 }
@@ -337,6 +348,26 @@ input:checked + .slider:before {
     text-align: center;
 }
 
+.introduction a{
+    text-decoration: none;
+}
+
+.introduction button{
+    background: var(--background);
+    color: var(--opposite_background);
+    border: none;
+    border-radius: 15px;
+    padding: 10px 25px;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 16px;
+    margin: 15px 0;
+}
+
+.introduction button:hover{
+    background: var(--orange_contrast);
+    cursor: pointer;
+}
+
 /* ------------Stack Container --------------*/
 
 .stack-container{
@@ -351,13 +382,13 @@ input:checked + .slider:before {
     position: relative;
     background: linear-gradient(90deg, rgba(193,249,122,1) 0%, rgba(222,186,112,1) 50%, rgba(128,125,108,1) 100%);
     box-shadow: 0px -30px 30px -3px rgba(223, 95, 11, 0.1);
-    z-index: 99999;
+    z-index: 5;
 }
 
 .stack-container-background{
     position: absolute;
     top: 0;
-    left: 0;
+    left: 0%;
     z-index: 0;
     width: 115%;
     height: 100vh;
@@ -502,7 +533,6 @@ input:checked + .slider:before {
 
 .project{
     width: 49%;
-    aspect-ratio: 16/9;
     position: relative;
     display: flex;
     align-items: center;
@@ -512,7 +542,8 @@ input:checked + .slider:before {
 
 .project img{
     width: 100%;
-    height: 400px;
+    height: 100%;
+    object-position: left;
     border-radius: 15px;
 }
 
@@ -539,6 +570,11 @@ input:checked + .slider:before {
     text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.3);
 }
 
+.project-overlay p{
+    max-width: 80%;
+    text-align: center;
+}
+
 .project-overlay svg{
     background: rgb(0, 0, 0);
     border: 1px solid black;
@@ -561,37 +597,56 @@ footer{
 
 /* ---------------------------------------*/
 
-@media (max-width: 1420px) {
-.navbar ul{
-    margin-right: 0;
-    justify-content: center;
-}
-.navbar ul li{
-    margin: 0 5rem;
-}
-.presentation {
-flex-direction: column;
-}
-.presentation_text{
-    position: static;
-    width: 60vw;
-    margin-bottom: 2rem;
-}
-.presentation h1,h2,p {
-    text-align: center;
+@media (max-width: 1250px) {
+    .presentation{
+        width: 80%;
+        padding: 0 10% 5vh 10%;
+    }
+    .introduction p{
+        width: 70%;
+    }
+
+    .introduction h2{
+        width: 45%;
+    }
+
+    .stack-row{
+        gap: 100px;
+        padding: 0px 22.5%;        
+    }
+
+    .hexagon{
+        height: 140px;
+        width: 90px;
+    }
 }
 
-#presentation_img{
-    position: static;
-    height: 30vh;
-}
+@media (max-width: 1050px) {
+    .presentation{
+        width: 90%;
+        padding: 0 5% 5vh 5%;
+    }
+
+    .introduction p{
+        width: 80%;
+    }
+    
+    .stack-row{
+        gap: 80px;
+        padding: 0px 30%;        
+    }
+
+    .hexagon{
+        height: 130px;
+        width: 86px;
+    }
 }
 
-@media (max-width: 850px) {
+@media (max-width: 925px) {
     .navbar ul{
         transition: 0.5s;
         width: 100%;
-        min-height: 100px;
+        min-height: 75px;
         background: var(--section_background);
         position: fixed;
         flex-direction: column;
@@ -616,10 +671,80 @@ flex-direction: column;
         padding-top: 80px;
     }
 
+    .presentation{
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .presentation_text{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .logo_container{
+        height: 40%;
+        width: auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    #presentation_img{
+        height: 100%;
+    }
+
+    .stack-row{
+        gap: 70px;
+        padding: 0px 40%;        
+    }
+
+    .hexagon{
+        height: 120px;
+        width: 81px;
+    }
+
+    .project-division{
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+    }
+
+    .project{
+        width: 90%;
+    }
+
+    .introduction h2{
+        width: 70%;
+    }
+
 }
 
 @media (max-width: 700px) {
-    .presentation_text{
-        width: 80vw;
+    
+    .introduction h2{
+        width: 85%;
+    }
+
+    .introduction p{
+        width: 85%;
+    }
+
+    .projects h2{
+        font-size: 22px;
+    }
+
+    .project{
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 550px){
+    .projects h2{
+        text-align: center;
+        width: 80%;
     }
 }
