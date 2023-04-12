@@ -28,7 +28,7 @@ body{
     padding: 0;
     overflow-x: hidden;
     max-width: 100%;
-    touch-action: pan-y;
+    /* touch-action: pan-y; */
 }
 
 main{
@@ -389,10 +389,11 @@ input:checked + .slider:before {
     top: 0;
     left: 0%;
     z-index: 0;
-    width: 115%;
+    /* width: 115%; */
+    width: 100%;
     height: 100vh;
     overflow-x: hidden;
-    animation: rightToLeft 30s linear infinite;
+    /* animation: rightToLeft 30s linear infinite; */
 }
 
 @keyframes rightToLeft{
@@ -408,10 +409,12 @@ input:checked + .slider:before {
 }
 
 .stack-row{
+    padding: 0 5%;
+    display: flex;
+    justify-content: center;
     position: relative;
     height: 25%;
     margin: 12.5px 0;
-    padding: 0 10%;
     display: flex;
     gap: 120px;
     align-items: center;
@@ -429,14 +432,12 @@ input:checked + .slider:before {
     cursor: pointer;
 }
 .toRight{
-    /* background: red; */
-    transform: translateX(22.5%);
+    /* transform: translateX(22.5%); */
     overflow:hidden;
 }
 
 .toLeft{
-    /* background: green; */
-    transform: translateX(-22.5%);
+    /* transform: translateX(-22.5%); */
     overflow:hidden;
 }
 
@@ -524,8 +525,8 @@ input:checked + .slider:before {
 }
 
 .project-division{
-    width: 90vw;
-    margin: 50px 5vw 0 5vw;
+    width: 90%;
+    margin: 50px 5% 0 5%;
     display: flex;
     justify-content: space-between;
 }
@@ -546,10 +547,8 @@ input:checked + .slider:before {
     border-radius: 15px;
 }
 
-.project:hover{
-}
-
 .project-overlay{
+    pointer-events: none;
     background: rgba(0, 0, 0, 0.5);
     opacity: 0;
     position: absolute;
@@ -583,6 +582,7 @@ input:checked + .slider:before {
 
 .project:hover .project-overlay{
     opacity: 1;
+    pointer-events:all;
 }
 
 /*--------------- Footer -----------------*/
@@ -611,7 +611,6 @@ footer{
 
     .stack-row{
         gap: 100px;
-        padding: 0px 22.5%;        
     }
 
     .hexagon{
@@ -632,7 +631,6 @@ footer{
     
     .stack-row{
         gap: 80px;
-        padding: 0px 30%;        
     }
 
     .hexagon{
@@ -644,9 +642,10 @@ footer{
 @media (max-width: 925px) {
     .navbar{
         width: 100%;
+        position: relative;
     }
-
     .navbar ul{
+        width: 100%;
         min-height: 75px;
         background: var(--section_background);
         position: fixed;
@@ -663,6 +662,7 @@ footer{
     .hamburger_button{
         display: block;
         z-index: 99;
+        transform: translateX(-50%);
     }
     #hamburger_checkbox:checked ~ ul .nav_toggle{
         margin: 1rem 0;
@@ -671,6 +671,8 @@ footer{
     #hamburger_checkbox:checked ~ ul{
         padding-top: 80px;
     }
+
+    /*--------------------------------------------*/
 
     .presentation{
         flex-direction: column-reverse;
@@ -697,15 +699,31 @@ footer{
         height: 100%;
     }
 
+    /*--------------------------------------------*/
+
+    .stack-container{
+        height: auto;
+        justify-content: space-between;
+        padding: 25px 0;
+    }
+
+    .stack-container-background{
+        height: 100%;
+    }
+
     .stack-row{
-        gap: 70px;
-        padding: 0px 40%;        
+        width: 90%;
+        height: 125px;
+        gap: 50px;
+        margin: 0;
     }
 
     .hexagon{
-        height: 120px;
-        width: 81px;
+        height: 90px;
+        width: 59px;
     }
+
+    /*--------------------------------------------*/
 
     .project-division{
         flex-direction: column;
@@ -733,6 +751,22 @@ footer{
         width: 85%;
     }
 
+    /*----------------*/
+
+    .stack-row{
+        width: 90%;
+        height: 125px;
+        gap: 45px;
+        margin: 0;
+    }
+
+    .hexagon{
+        height: 75px;
+        width: 52px;
+    }
+
+    /*----------------*/
+
     .projects h2{
         font-size: 22px;
     }
@@ -747,5 +781,66 @@ footer{
     .projects h2{
         text-align: center;
         width: 80%;
+    }
+    .stack-row{
+        width: 90%;
+        height: 100px;
+        gap: 35px;
+        margin: 0;
+    }
+
+    .hexagon{
+        height: 60px;
+        width: 46px;
+    }
+    .presentation_text h1{
+        font-size: 2.8rem;
+    }
+
+    .presentation .buttons{
+        gap: 10px;
+    }
+}
+
+@media (max-width: 450px){
+    .introduction img{
+        width: 20%;
+    }
+    .introduction h2{
+        font-size: 22px;
+    }
+    .introduction p{
+        width: 95%;
+        font-size: 16px;
+    }
+    .stack-row{
+        width: 90%;
+        gap: 32.5px;
+        margin: 0;
+    }
+    .hexagon{
+        height: 55px;
+        width: 44px;
+    }
+}
+
+@media (max-width: 400px){
+    .presentation_text h1{
+        font-size: 2.5rem;
+    }
+    .presentation_text button{
+        padding: 10px 15px;
+    }
+    .projects h2{
+        width: 90%;
+    }
+    .stack-row{
+        width: 90%;
+        gap: 27.5px;
+        margin: 0;
+    }
+    .hexagon{
+        height: 55px;
+        width: 44px;
     }
 }

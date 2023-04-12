@@ -1,3 +1,5 @@
+// Particles
+
 window.onload= function() {
     Particles.init({
         selector: '.background-particles',
@@ -51,24 +53,6 @@ nav_items.forEach((item)=>{
     })
 })
 
-
-//Responsive nav ul
-/*
-    This is needed because on CSS media query at 925px the position switches to "fixed", this meaning that 
-    "width" can no longer be 100% as the element it's no longer related to it's direct parent but to the total width.
-    By getting the width of windows that always stays 100%, this issue can be solved
-*/ 
-var responsiveNavUl = document.getElementById('responsiveNav')
-if(window.innerWidth<=925){
-    responsiveNavUl.style.width=`${window.innerWidth}px`
-}
-
-window.addEventListener('resize',()=>{
-    if(window.innerWidth<=925){
-        responsiveNavUl.style.width=`${window.innerWidth}px`
-    }
-})
-
 // Animation scroll library
 
 const srBottom = ScrollReveal({
@@ -104,22 +88,24 @@ srFadeIn.reveal('.fadeIn');
 //     })
 //     rowToLeft.style.right = -scrollTop/4.5 + "px";
 // });
-function handleParallax() {
-    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    var rowToRight = document.querySelectorAll(".toRight");
-    var rowToLeft = document.querySelector(".toLeft");
-    rowToRight.forEach(row => {
-        row.style.left = -scrollTop / 4.5 + "px";
-    })
-    rowToLeft.style.right = -scrollTop / 4.5 + "px";
+
+// Stack Ref Computer/Mobile
+
+let stacksLink = document.getElementById('stacksRefMobile')
+
+if(window.innerWidth<925){
+    stacksLink.href='#stacksRefMobile'
+}else{
+    stacksLink.href='#stacksRefComputer'
 }
 
-// Add event listeners for both scroll and touchmove events
-window.addEventListener("scroll", handleParallax);
-window.addEventListener("touchmove", handleParallax);
-
-var viewportBottom = window.innerHeight + window.pageYOffset;
-console.log(viewportBottom);
+window.addEventListener('resize',()=>{
+    if(window.innerWidth<925){
+        stacksLink.href='#stacksRefMobile'
+    }else{
+        stacksLink.href='#stacksRefComputer'
+    }    
+})
 
 // Light/Dark Mode
 
