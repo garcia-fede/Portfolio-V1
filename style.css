@@ -29,7 +29,6 @@ body{
     overflow-x: hidden;
     max-width: 100%;
     touch-action: pan-y;
-    /* cursor: none; */
 }
 
 main{
@@ -187,7 +186,7 @@ input:checked + .slider:before {
     top: 15px;
     right: 50%;
     left:50%;
-    transform: translateX(-50%);
+    transform: translateX(-35%);
     width: 40px;
     height: 35px;
     display: none;
@@ -204,7 +203,7 @@ input:checked + .slider:before {
     height: 5px;
     background: var(--text_and_details);
     border-radius: 100px;
-    transition: 1s;
+    transition: 0.5s;
 }
 
 #hamburger_checkbox:checked ~ .hamburger_button span:nth-child(1){
@@ -643,9 +642,11 @@ footer{
 }
 
 @media (max-width: 925px) {
-    .navbar ul{
-        transition: 0.5s;
+    .navbar{
         width: 100%;
+    }
+
+    .navbar ul{
         min-height: 75px;
         background: var(--section_background);
         position: fixed;

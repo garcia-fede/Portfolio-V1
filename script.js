@@ -28,11 +28,13 @@ document.addEventListener("mousemove",(e)=>{
 })
 
 var nav_items = document.querySelectorAll(".nav-item");
+var hamburger_checkbox = document.querySelector("#hamburger_checkbox")
 nav_items.forEach((item)=>{
     item.addEventListener("mouseover",(e)=>{
         cursor.style.display='block'
     })
-    item.addEventListener("click",(e)=>{
+    item.addEventListener("click",()=>{
+        //Active
         nav_items.forEach(i=>{
             if(i!=item){
                 i.style.color= "var(--text_and_details)";
@@ -45,9 +47,27 @@ nav_items.forEach((item)=>{
                 i.style.borderBottom='1px solid var(--orange_contrast)';
             }
         })
+        hamburger_checkbox.checked=false
     })
 })
 
+
+//Responsive nav ul
+/*
+    This is needed because on CSS media query at 925px the position switches to "fixed", this meaning that 
+    "width" can no longer be 100% as the element it's no longer related to it's direct parent but to the total width.
+    By getting the width of windows that always stays 100%, this issue can be solved
+*/ 
+var responsiveNavUl = document.getElementById('responsiveNav')
+if(window.innerWidth<=925){
+    responsiveNavUl.style.width=`${window.innerWidth}px`
+}
+
+window.addEventListener('resize',()=>{
+    if(window.innerWidth<=925){
+        responsiveNavUl.style.width=`${window.innerWidth}px`
+    }
+})
 
 // Animation scroll library
 
@@ -57,7 +77,8 @@ const srBottom = ScrollReveal({
     duration: 500,
     delay: 100,
     easing: 'ease-out',
-    reset: true
+    reset: true,
+    mobile: false
 })
 srBottom.reveal('.scrollIn');
 
@@ -68,20 +89,37 @@ const srFadeIn = ScrollReveal({
     duration: 500,
     delay: 100,
     easing: 'ease-out',
+    mobile: false
 })
 srFadeIn.reveal('.fadeIn');
 
 // Parallax Tech Stack
 
-window.addEventListener("scroll", function() {
-    var scrollTop = window.pageYOffset;
+// window.addEventListener("scroll", function() {
+//     var scrollTop = window.pageYOffset;
+//     var rowToRight = document.querySelectorAll(".toRight");
+//     var rowToLeft = document.querySelector(".toLeft");
+//     rowToRight.forEach(row=>{
+//         row.style.left = -scrollTop/4.5 + "px";
+//     })
+//     rowToLeft.style.right = -scrollTop/4.5 + "px";
+// });
+function handleParallax() {
+    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     var rowToRight = document.querySelectorAll(".toRight");
     var rowToLeft = document.querySelector(".toLeft");
-    rowToRight.forEach(row=>{
-        row.style.left = -scrollTop/4.5 + "px";
+    rowToRight.forEach(row => {
+        row.style.left = -scrollTop / 4.5 + "px";
     })
-    rowToLeft.style.right = -scrollTop/4.5 + "px";
-});
+    rowToLeft.style.right = -scrollTop / 4.5 + "px";
+}
+
+// Add event listeners for both scroll and touchmove events
+window.addEventListener("scroll", handleParallax);
+window.addEventListener("touchmove", handleParallax);
+
+var viewportBottom = window.innerHeight + window.pageYOffset;
+console.log(viewportBottom);
 
 // Light/Dark Mode
 
