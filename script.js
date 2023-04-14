@@ -15,7 +15,29 @@ window.onload= function() {
             }
         }
     });
+
+    // Animation scroll library begin
+    AOS.init();
 };
+
+// Animation scroll library
+
+// Get all elements with the "data-my-attrs" attribute animated
+var scrollIn = document.querySelectorAll('[data-my-attrs]');
+
+// Apply the attributes
+for (var i = 0; i < scrollIn.length; i++) {
+    var attrs = scrollIn[i].getAttribute('data-my-attrs').split(',');
+    scrollIn[i].setAttribute('data-aos', attrs[0]);
+    scrollIn[i].setAttribute('data-aos-offset', attrs[1]);
+    scrollIn[i].setAttribute('data-aos-delay', attrs[2]);
+    scrollIn[i].setAttribute('data-aos-duration', attrs[3]);
+    scrollIn[i].setAttribute('data-aos-easing', attrs[4]);
+    scrollIn[i].setAttribute('data-aos-mirror', attrs[5]);
+    scrollIn[i].setAttribute('data-aos-once', attrs[6]);
+    scrollIn[i].setAttribute('data-aos-anchor-placement', attrs[7]);
+}
+
 
 // Scroll Value
 var scrolled=0.01;
@@ -52,42 +74,6 @@ nav_items.forEach((item)=>{
         hamburger_checkbox.checked=false
     })
 })
-
-// Animation scroll library
-
-const srBottom = ScrollReveal({
-    origin: 'bottom',
-    distance: '100px',
-    duration: 500,
-    delay: 100,
-    easing: 'ease-out',
-    reset: true,
-    mobile: false
-})
-srBottom.reveal('.scrollIn');
-
-const srFadeIn = ScrollReveal({
-    origin: 'bottom',
-    distance: '10px',
-    opacity: 0.8,
-    duration: 500,
-    delay: 100,
-    easing: 'ease-out',
-    mobile: false
-})
-srFadeIn.reveal('.fadeIn');
-
-// Parallax Tech Stack
-
-// window.addEventListener("scroll", function() {
-//     var scrollTop = window.pageYOffset;
-//     var rowToRight = document.querySelectorAll(".toRight");
-//     var rowToLeft = document.querySelector(".toLeft");
-//     rowToRight.forEach(row=>{
-//         row.style.left = -scrollTop/4.5 + "px";
-//     })
-//     rowToLeft.style.right = -scrollTop/4.5 + "px";
-// });
 
 // Stack Ref Computer/Mobile
 

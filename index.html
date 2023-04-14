@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Federico Garcia - Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://unpkg.com/scrollreveal"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 <body>
     <main id="main">
@@ -31,7 +32,7 @@
             </ul>
         </nav>
         <div class="presentation">
-            <div class="presentation_text fadeIn">
+            <div class="presentation_text">
                 <h1>Federico Garcia</h1>
                 <h2>Web Designer</h2>
                 <p>Welcome to my personal website.</p><p>Here you can get to know me better and find some projects that I worked on.</p>
@@ -60,18 +61,18 @@
                 </div>
                 
             </div>
-            <div class="logo_container"><img class="fadeIn" src="Imagenes/Logo - Transparente.png" id="presentation_img" alt="Presentation Image"></div>
+            <div class="logo_container"><img class="" src="Imagenes/Logo - Transparente.png" id="presentation_img" alt="Presentation Image"></div>
             <canvas class="background-particles"></canvas>
         </div>
         <div class="introduction" id="introduction">
-            <img class="scrollIn" id="code-tag" src="Imagenes/tag.png" alt="Code Icon">
-            <h2 class="scrollIn">My name is Federico Garcia, I'm a Full Stack Developer from Argentina </h2>
-            <p class="scrollIn">If there is one thing I love about web development, it's the infinite amount of possibilities that exist in creating.
+            <img data-my-attrs="fade-up, 100, 300, 1000, ease-in-out, true, false, top-center" id="code-tag" src="Imagenes/tag.png" alt="Code Icon">
+            <h2 data-my-attrs="fade-up, 100, 300, 1000, ease-in-out, true, false, top-center">My name is Federico Garcia, I'm a Full Stack Developer from Argentina </h2>
+            <p data-my-attrs="fade-up, 100, 300, 1000, ease-in-out, true, false, top-center">If there is one thing I love about web development, it's the infinite amount of possibilities that exist in creating.
                 In my 3 years of studying I've been through different courses and universities where I learnt about
                 Front End and Back End and I can proudly say I can work with both.
             </p>
-            <p class="scrollIn">Here you can see some of the technologies and tools that I use:</p>
-            <a class="scrollIn" href="#stacksRefComputer" id="stacksRefMobile"><button>Scroll down</button></a>
+            <p data-my-attrs="fade-up, 100, 300, 1000, ease-in-out, true, false, top-center">Here you can see some of the technologies and tools that I use:</p>
+            <a data-my-attrs="fade-up, 100, 300, 1000, ease-in-out, true, false, top-center" href="#stacksRefComputer" id="stacksRefMobile"><button>Scroll down</button></a>
         </div>
         <div class="stack-container" id="stacksRefComputer">
             <div class="stack-row toRight">
@@ -101,9 +102,9 @@
             <img class="stack-container-background" src="Imagenes/cool-background.png"></div>
         </div>
         <div class="projects" id="projects">
-            <h2 class="scrollIn">These are some of the projects that I've worked on:</h2>
+            <h2 data-my-attrs="fade-up, 100, 300, 1000, ease-in-out, true, false, top-center">These are some of the projects that I've worked on:</h2>
             <div class="project-division">
-                <div class="project scrollIn">
+                <div class="project" data-my-attrs="fade-up, 100, 300, 1000, ease-in-out, true, false, top-center">
                     <div class="project-overlay">
                         <p>Personal portfolio made with HTML, CSS and Javascript.</p>
                         <div class="links">
@@ -125,7 +126,7 @@
                     </div>
                     <img src="Imagenes/portfolio.png" alt="Personal portfolio">
                 </div>
-                <div class="project scrollIn">
+                <div class="project" data-my-attrs="fade-up, 100, 300, 1000, ease-in-out, true, false, top-center">
                     <div class="project-overlay">
                         <p>News website made with React Js, Node Js and MySQL</p>
                         <div class="links">
@@ -150,8 +151,67 @@
             </div>
         </div>
     </main>
-    <footer id="contact">
-        
+    <footer class="contact_container" id="contact">
+        <div class="contact_information">
+            <ul>
+                <li>
+                    <a href="https://mail.google.com/mail/?view=cm&to=federicoignaciogarcia@gmail.com" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <rect x="3" y="5" width="18" height="14" rx="2" />
+                            <polyline points="3 7 12 13 21 7" />
+                        </svg>
+                    </a>
+                    federicoignaciogarcia@gmail.com
+                </li>
+                <li>
+                    <a href="https://goo.gl/maps/DpaykA3dtEoBtwaVA" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-map-pin" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <circle cx="12" cy="11" r="3" />
+                            <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" />
+                        </svg>
+                    </a>
+                    Olivos, Vicente Lopez
+                </li>
+                <li>
+                    <a href="tel:+541163095459">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-phone-call" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
+                            <path d="M15 7a2 2 0 0 1 2 2" />
+                            <path d="M15 3a6 6 0 0 1 6 6" />
+                        </svg>
+                    </a>
+                    +54 11 6309-5459
+                </li>
+            </ul>
+            <div>
+                <h3>Contact me</h3>
+                <p>Whether you're looking to hire a full-time developer or need assistance with a project, I'm eager to bring my skills and expertise to the table. Let's connect and explore the possibilities.</p>
+                <div class="social_links">
+                    <a href="https://github.com/garcia-fede/" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/federico-garc%C3%ADa-088917236/" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <rect x="4" y="4" width="16" height="16" rx="2" />
+                            <line x1="8" y1="11" x2="8" y2="16" />
+                            <line x1="8" y1="8" x2="8" y2="8.01" />
+                            <line x1="12" y1="16" x2="12" y2="11" />
+                            <path d="M16 16v-3a2 2 0 0 0 -4 0" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <a target="_blank" href="https://www.linkedin.com/in/federico-garc%C3%ADa-088917236/" rel="noopener">© Federico Garcia 2023</a>
+        </div>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js"></script>
     <script src="./script.js"></script>
